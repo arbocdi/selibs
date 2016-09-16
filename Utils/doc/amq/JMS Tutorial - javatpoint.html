@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8"><title>JMS Tutorial - javatpoint</title><link rel="SHORTCUT ICON" href="http://www.javatpoint.com/images/logo/icon.png"><link rel="stylesheet" type="text/css" href="JMS%20Tutorial%20-%20javatpoint_files/link.css"><meta name="keywords" content=""><meta name="description" content=""><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="canonical" href="http://www.javatpoint.com/jms-tutorial"><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta name="twitter:title" property="og:title" content="JMS Tutorial - javatpoint"><meta name="twitter:description" property="og:description" content=""><meta property="og:url" content="http://www.javatpoint.com/jms-tutorial"><meta property="og:site_name" content="www.javatpoint.com"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@pagejavatpoint"><meta name="twitter:domain" content="www.javatpoint.com"><meta name="twitter:creator" content="@pagejavatpoint"><style type="text/css">.dp-j .annotation { color: #646464; }.dp-j .number { color: #C00000; }</style><style type="text/css">.dp-j .annotation { color: #646464; }.dp-j .number { color: #C00000; }</style><style type="text/css">.dp-j .annotation { color: #646464; }.dp-j .number { color: #C00000; }</style><style type="text/css">.dp-j .annotation { color: #646464; }.dp-j .number { color: #C00000; }</style><style type="text/css">.dp-j .annotation { color: #646464; }.dp-j .number { color: #C00000; }</style><style type="text/css">.dp-j .annotation { color: #646464; }.dp-j .number { color: #C00000; }</style></head> <body onload="highlightlink()"> <div id="page" style="margin:-9px;background-color:#f5f5f4;"><div id="container"> <div class="header"><!--<p style="font-weight:bold;padding:7px;color:white;background-color:gray;margin:0px"><marquee>Please delete cookie and cache of your browser once because many links of javatpoint are changed. You may face problem if you don't delete cookie and cache of the browser.</marquee></p>
+-->
+<table style="width:100%"><tbody><tr><td><div id="headerlink" style="padding:0px;margin:0px"><span style="margin-right:20px;width:45%px"></span><span style="float:right;margin-right:5px;width:45%"><a href="http://www.javatpoint.com/contribute-us" style="text-decoration:none;color:#6666CC">Contribute Us</a> | <a href="http://www.javatpoint.com/asknewquestion.jsp" style="text-decoration:none;color:#6666CC">Ask Question</a> | <a href="http://www.javatpoint.com/login.jsp" style="text-decoration:none;color:#6666CC">login</a> <a target="_blank" href="http://feeds.feedburner.com/javatpointsonoo"><img src="JMS%20Tutorial%20-%20javatpoint_files/r.png" alt="RSS Feed"></a><a target="_blank" href="http://feedburner.google.com/fb/a/mailverify?uri=javatpointsonoo"><img src="JMS%20Tutorial%20-%20javatpoint_files/m.png" alt="Subscribe to Get Email Alerts"></a><a target="_blank" href="https://www.facebook.com/javatpoint"><img src="JMS%20Tutorial%20-%20javatpoint_files/f.png" alt="Facebook Page"></a><a target="_blank" href="https://plus.google.com/u/0/113973042385691981314/posts"><img src="JMS%20Tutorial%20-%20javatpoint_files/g.png" alt="Google Page"></a><a target="_blank" href="https://twitter.com/pagejavatpoint"><img src="JMS%20Tutorial%20-%20javatpoint_files/t.png" alt="Twitter Page"></a></span><hr class="upperhr"></div> </td></tr><tr><td><!--<div style="float:left;width:230px;"><img src="http://www.javatpoint.com/images/logo/log2.png" alt="javatpoint.com"/></div>--><div style="margin:0px;padding:0px;float:left;width:23%;margin-left:10px;margin-bottom:0px"><a href="http://www.javatpoint.com/" style="text-decoration:none;"><span style="color:orange;font-size:28px;font-weight:bold;">Java</span><span style="color:#666600;font-size:40px;font-weight:bold;">T</span><span style="color:red;font-size:28px;font-weight:bold;">point</span></a></div><div style="float:left;width:50%;"><form class="navbar-search" method="get" action="http://www.google.com/search" target="_blank"> <input name="q" class="search-query span2" placeholder="Search on javatpoint..." title="Search on Javatpoint" type="text"><input name="sitesearch" value="www.javatpoint.com" type="hidden"></form><!--<span style="margin-left:100px;color:orange;font-size:20px;font-weight:bold;">Happy </span><span style="color:red;font-size:20px;font-weight:bold;">New </span><span style="color:#666600;font-size:20px;font-weight:bold;">Year</span><span style="color:#666600;font-size:30px;font-weight:bold;"> 2015</span>--></div><div style="width:25%;float:right"><div style="padding:0px;margin:0px;margin-right:10px;margin-top:10px;float:right"><a target="_blank" style="background-color:#6699CC;text-decoration:none;color:white;border-radius:5px;font-weight:bold;padding:6px 10px 6px 10px;" href="http://www.javatpoint.com/subscribe.jsp">Subscribe Us</a></div><div style="padding:0px;margin:0px;margin-right:10px;float:right"><p style="padding:0px;margin:0px;margin-top:5px;color:#983688;font-weight:bold;">91-9990449935</p><p style="padding:0px;margin:0px;color:#983688;font-weight:bold;">&nbsp;0120-4256464</p></div></div></td></tr></tbody></table> </div><div class="headermobile"><div style="margin:0px;padding:0px;text-align:left;margin-left:10px;"><a href="http://www.javatpoint.com/" style="text-decoration:none;"><span style="color:orange;font-size:25px;font-weight:bold;">Java</span><span style="color:#666600;font-size:35px;font-weight:bold;">T</span><span style="color:red;font-size:25px;font-weight:bold;">point</span></a></div><div style="margin:0px;padding:0px;clear:both"><form class="navbar-search-m" method="get" action="http://www.google.com/search" target="_blank"> <input name="q" class="search-query span2-m" placeholder="Search on javatpoint..." title="Search on Javatpoint" type="text"><input name="sitesearch" value="www.javatpoint.com" type="hidden"></form></div></div><div id="link" style="clear:both"> <div id="smoothmenu1" class="ddsmoothmenu">
+<ul>
+<li><a href="http://www.javatpoint.com/">Home</a></li>
+<li><a href="http://www.javatpoint.com/java-tutorial">Core Java</a></li>
+<li><a href="http://www.javatpoint.com/servlet-tutorial">Servlet</a></li>
+<li><a href="http://www.javatpoint.com/jsp-tutorial">JSP</a></li>
+<li><a href="http://www.javatpoint.com/ejb-tutorial" class="selected">EJB3</a></li>
+<li><a href="http://www.javatpoint.com/struts-2-tutorial">Struts2</a></li>
+<li><a href="http://www.javatpoint.com/java-mail-api-tutorial">Mail API</a></li>
+<li><a href="http://www.javatpoint.com/hibernate-tutorial">Hibernate</a></li>
+<li><a href="http://www.javatpoint.com/spring-tutorial">Spring</a></li>
+<li><a href="http://www.javatpoint.com/android-tutorial">Android</a></li>
+<li><a href="http://www.javatpoint.com/design-patterns-in-java">Design P.</a></li>
+<li><a href="http://www.javatpoint.com/examaccess">Quiz</a></li>
+<li><a href="http://www.javatpoint.com/free-java-projects">Projects</a></li>
+<li><a href="http://www.javatpoint.com/corejava-interview-questions">Interview Q</a>
+</li><li><a href="http://www.javatpoint.com/comment.jsp">Comment</a>
+</li><li><a href="http://www.javatpoint.com/forum">Forum</a>
+</li>
+</ul>
+<br style="clear: left">
+</div>
+</div><div id="mobilemenu" style="clear:both"> <button onmouseover="style.color='khaki' " onmouseout="style.color='white'" onclick="showmenu()">Content Menu ▼</button></div><div id="mobilemenu" style="clear:both"><script src="JMS%20Tutorial%20-%20javatpoint_files/ga.js" async="" type="text/javascript"></script><script async="" src="JMS%20Tutorial%20-%20javatpoint_files/adsbygoogle.html"></script><!-- responsivemobile --><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4699858549023382" data-ad-slot="1236815518" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div><div id="menu"><div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">EJB Tutorial</span></h2>
+</div>
+
+<div class="leftmenu">
+<a href="http://www.javatpoint.com/ejb-tutorial"><span>Introduction to EJB</span></a>
+<a href="http://www.javatpoint.com/what-is-ejb">What is EJB</a>
+</div>
+
+<div class="leftmenu2">
+<a href="http://www.javatpoint.com/session-bean"><span>Session Bean</span></a>
+</div>
+<div class="leftmenu">
+<a href="http://www.javatpoint.com/stateless-session-bean">Stateless Session Bean</a>
+<a href="http://www.javatpoint.com/stateful-session-bean">Stateful Session Bean</a>
+<!--
+<a href="singleton-session-bean" >Singleton Session Bean</a>
+-->
+</div>
+
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">JMS Tutorial</span></h2>
+<a href="http://www.javatpoint.com/jms-tutorial"><span>JMS Tutorial</span></a>
+</div>
+<div class="leftmenu">
+<a style="color: black;" href="http://www.javatpoint.com/jms-tutorial"><strong>What is JMS</strong></a>
+<a style="color: black;" href="http://www.javatpoint.com/jms-tutorial"><strong>JMS Queue</strong></a>
+<a style="color: black;" href="http://www.javatpoint.com/jms-tutorial"><strong>JMS Topic</strong></a>
+</div>
+
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">MDB Tutorial</span></h2>
+<a href="http://www.javatpoint.com/message-driven-bean"><span>Message Driven Bean</span></a>
+</div>
+<div class="leftmenu2">
+<a href="http://www.javatpoint.com/entity-bean"><span>Entity Bean</span></a>
+</div>
+<table id="leftad"><tbody><tr><td><img src="JMS%20Tutorial%20-%20javatpoint_files/wh.JPG" alt="space"></td></tr><tr><td><script async="" src="JMS%20Tutorial%20-%20javatpoint_files/adsbygoogle.html"></script> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-4699858549023382" data-ad-slot="4476401222"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script></td></tr></tbody></table></div><div class="onlycontent" style="margin-left:10px;margin-top:15px;width:65%;margin-auto;float:left;"><div id="right1024" style=""><script async="" src="JMS%20Tutorial%20-%20javatpoint_files/adsbygoogle.html"></script><!-- javatpointheader --><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-4699858549023382" data-ad-slot="1219987637"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div><div style="margin-left:0px;"><div id="city">
+<table>
+<tbody><tr><td>
+<div id="bottomnextup">
+
+<a class="next" href="http://www.javatpoint.com/message-driven-bean">next&gt;&gt;</a>
+<a class="next" href="http://www.javatpoint.com/stateful-session-bean">&lt;&lt; prev</a>
+
+</div>
+<h1 class="h1">JMS Tutorial</h1>
+<p>JMS (Java Message Service) is an API that provides the facility to 
+create, send and read messages. It provides loosely coupled, reliable 
+and asynchronous communication.</p>
+<p>JMS is also known as a messaging service.</p>
+
+<hr>
+<h2 class="h2">Understanding Messaging</h2>
+<p>Messaging is a technique to communicate applications or software components.</p>
+<p>JMS is mainly used to send and receive message from one application to another.</p>
+<hr>
+<h2 class="h2">Requirement of JMS</h2>
+<p>Generally, user sends message to application. But, if we want to send
+ message from one application to another, we need to use JMS API.</p>
+<p>Consider a scenario, one application A is running in INDIA and 
+another application B is running in USA. To send message from A 
+application to B, we need to use JMS.</p>
+<hr>
+<h2 class="h2">Advantage of JMS</h2>
+<p>1) <b>Asynchronous:</b> To receive the message, client is not required to send request. Message will arrive automatically to the client.</p>
+<p>2) <b>Reliable:</b> It provides assurance that message is delivered.</p>
+
+<hr>
+<h2 class="h2">Messaging Domains</h2>
+<p>There are two types of messaging domains in JMS.</p>
+<ol>
+<li>Point-to-Point Messaging Domain</li>
+<li>Publisher/Subscriber Messaging Domain</li>
+</ol>
+
+<hr>
+<h2 class="h4">1) Point-to-Point (PTP) Messaging Domain</h2>
+<p>In PTP model, one message is <b>delivered to one receiver</b> only. Here, <b>Queue</b> is used as a message oriented middleware (MOM).</p>
+<p>The Queue is responsible to hold the message until receiver is ready.</p>
+<p>In PTP model, there is <b>no timing dependency</b> between sender and receiver.</p>
+<img src="JMS%20Tutorial%20-%20javatpoint_files/jms-point-to-point-model.png" alt="jms point to point model">
+
+<hr>
+<h2 class="h4">2) Publisher/Subscriber (Pub/Sub) Messaging Domain</h2>
+<p>In Pub/Sub model, one message is <b>delivered to all the subscribers</b>. It is like broadcasting. Here, <b>Topic</b> is used as a message oriented middleware that is responsible to hold and deliver messages.</p>
+<p>In PTP model, there is <b>timing dependency</b> between publisher and subscriber.</p>
+<img src="JMS%20Tutorial%20-%20javatpoint_files/jms-publisher-subscriber-model.png" alt="jms point to point model">
+
+<hr>
+<h2 class="h2">JMS Programming Model</h2>
+<img src="JMS%20Tutorial%20-%20javatpoint_files/jms-programming-model.png" alt="jms programming model">
+
+<hr>
+<h2 class="h2">JMS Queue Example</h2>
+<p>To develop JMS queue example, you need to install any application server. Here, we are using <b>glassfish3</b> server where we are creating two JNDI.</p>
+<ol>
+<li>Create connection factory named <b>myQueueConnectionFactory</b></li>
+<li>Create destination resource named <b>myQueue</b></li>
+</ol>
+<p>After creating JNDI, create server and receiver application. You need
+ to run server and receiver in different console. Here, we are using 
+eclipse IDE, it is opened in different console by default.</p>
+<h4 class="h4">1) Create connection factory and destination resource</h4>
+<p>Open server admin console by the URL <b>http://localhost:4848</b></p>
+<p>Login with the username and password.</p>
+<p>Click on the <b>JMS Resource -&gt; Connection Factories -&gt; New</b>, now write the pool name and select the Resource Type as QueueConnectionFactory then click on ok button.</p>
+<img src="JMS%20Tutorial%20-%20javatpoint_files/create-queue-connection-factory.png" alt="jms queue connection factory" width="700">
+
+<p>Click on the <b>JMS Resource -&gt; Destination Resources -&gt; New</b>, now write the JNDI name and physical destination name then click on ok button.</p>
+<img src="JMS%20Tutorial%20-%20javatpoint_files/create-queue-destination.png" alt="jms queue destination resource" width="700">
+
+<h4 class="h4">2) Create sender and receiver application</h4>
+
+<p>Let's see the Sender and Receiver code. Note that Receiver is 
+attached with listener which will be invoked when user sends message.</p>
+
+<span class="filename">File: MySender.java</span>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span class="keyword">import</span><span>&nbsp;java.io.BufferedReader;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">import</span><span>&nbsp;java.io.InputStreamReader;&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="keyword">import</span><span>&nbsp;javax.naming.*;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">import</span><span>&nbsp;javax.jms.*;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;MySender&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">try</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;<span class="comment">//Create&nbsp;and&nbsp;start&nbsp;connection</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InitialContext&nbsp;ctx=<span class="keyword">new</span><span>&nbsp;InitialContext();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QueueConnectionFactory&nbsp;f=(QueueConnectionFactory)ctx.lookup(<span class="string">"myQueueConnectionFactory"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QueueConnection&nbsp;con=f.createQueueConnection();&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;con.start();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//2)&nbsp;create&nbsp;queue&nbsp;session</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QueueSession&nbsp;ses=con.createQueueSession(<span class="keyword">false</span><span>,&nbsp;Session.AUTO_ACKNOWLEDGE);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//3)&nbsp;get&nbsp;the&nbsp;Queue&nbsp;object</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Queue&nbsp;t=(Queue)ctx.lookup(<span class="string">"myQueue"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//4)create&nbsp;QueueSender&nbsp;object&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QueueSender&nbsp;sender=ses.createSender(t);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//5)&nbsp;create&nbsp;TextMessage&nbsp;object</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TextMessage&nbsp;msg=ses.createTextMessage();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//6)&nbsp;write&nbsp;message</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BufferedReader&nbsp;b=<span class="keyword">new</span><span>&nbsp;BufferedReader(</span><span class="keyword">new</span><span>&nbsp;InputStreamReader(System.in));&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span><span>(</span><span class="keyword">true</span><span>)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"Enter&nbsp;Msg,&nbsp;end&nbsp;to&nbsp;terminate:"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;s=b.readLine();&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(s.equals(</span><span class="string">"end"</span><span>))&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msg.setText(s);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//7)&nbsp;send&nbsp;message</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sender.send(msg);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"Message&nbsp;successfully&nbsp;sent."</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//8)&nbsp;connection&nbsp;close</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;con.close();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<span class="keyword">catch</span><span>(Exception&nbsp;e){System.out.println(e);}&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><textarea style="display: none;" name="code" class="java">import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import javax.naming.*;
+import javax.jms.*;
+
+public class MySender {
+	public static void main(String[] args) {
+		try
+		{	//Create and start connection
+			InitialContext ctx=new InitialContext();
+			QueueConnectionFactory f=(QueueConnectionFactory)ctx.lookup("myQueueConnectionFactory");
+			QueueConnection con=f.createQueueConnection();
+			con.start();
+			//2) create queue session
+			QueueSession ses=con.createQueueSession(false, Session.AUTO_ACKNOWLEDGE);
+			//3) get the Queue object
+			Queue t=(Queue)ctx.lookup("myQueue");
+			//4)create QueueSender object		
+			QueueSender sender=ses.createSender(t);
+			//5) create TextMessage object
+			TextMessage msg=ses.createTextMessage();
+			
+			//6) write message
+			BufferedReader b=new BufferedReader(new InputStreamReader(System.in));
+			while(true)
+			{
+				System.out.println("Enter Msg, end to terminate:");
+				String s=b.readLine();
+				if (s.equals("end"))
+					break;
+				msg.setText(s);
+				//7) send message
+				sender.send(msg);
+				System.out.println("Message successfully sent.");
+			}
+			//8) connection close
+			con.close();
+		}catch(Exception e){System.out.println(e);}
+	}
+}
+</textarea></div>
+<span class="filename">File: MyReceiver.java</span>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span class="keyword">import</span><span>&nbsp;javax.jms.*;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">import</span><span>&nbsp;javax.naming.InitialContext;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;MyReceiver&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">try</span><span>{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//1)&nbsp;Create&nbsp;and&nbsp;start&nbsp;connection</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InitialContext&nbsp;ctx=<span class="keyword">new</span><span>&nbsp;InitialContext();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QueueConnectionFactory&nbsp;f=(QueueConnectionFactory)ctx.lookup(<span class="string">"myQueueConnectionFactory"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QueueConnection&nbsp;con=f.createQueueConnection();&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;con.start();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//2)&nbsp;create&nbsp;Queue&nbsp;session</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QueueSession&nbsp;ses=con.createQueueSession(<span class="keyword">false</span><span>,&nbsp;Session.AUTO_ACKNOWLEDGE);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//3)&nbsp;get&nbsp;the&nbsp;Queue&nbsp;object</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Queue&nbsp;t=(Queue)ctx.lookup(<span class="string">"myQueue"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//4)create&nbsp;QueueReceiver</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QueueReceiver&nbsp;receiver=ses.createReceiver(t);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//5)&nbsp;create&nbsp;listener&nbsp;object</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyListener&nbsp;listener=<span class="keyword">new</span><span>&nbsp;MyListener();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//6)&nbsp;register&nbsp;the&nbsp;listener&nbsp;object&nbsp;with&nbsp;receiver</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;receiver.setMessageListener(listener);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"Receiver1&nbsp;is&nbsp;ready,&nbsp;waiting&nbsp;for&nbsp;messages..."</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"press&nbsp;Ctrl+c&nbsp;to&nbsp;shutdown..."</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span><span>(</span><span class="keyword">true</span><span>){&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thread.sleep(<span class="number">1000</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<span class="keyword">catch</span><span>(Exception&nbsp;e){System.out.println(e);}&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><textarea style="display: none;" name="code" class="java">import javax.jms.*;
+import javax.naming.InitialContext;
+
+public class MyReceiver {
+	public static void main(String[] args) {
+		try{
+			//1) Create and start connection
+			InitialContext ctx=new InitialContext();
+			QueueConnectionFactory f=(QueueConnectionFactory)ctx.lookup("myQueueConnectionFactory");
+			QueueConnection con=f.createQueueConnection();
+			con.start();
+			//2) create Queue session
+			QueueSession ses=con.createQueueSession(false, Session.AUTO_ACKNOWLEDGE);
+			//3) get the Queue object
+			Queue t=(Queue)ctx.lookup("myQueue");
+			//4)create QueueReceiver
+			QueueReceiver receiver=ses.createReceiver(t);
+			
+			//5) create listener object
+			MyListener listener=new MyListener();
+			
+			//6) register the listener object with receiver
+			receiver.setMessageListener(listener);
+			
+			System.out.println("Receiver1 is ready, waiting for messages...");
+			System.out.println("press Ctrl+c to shutdown...");
+			while(true){				
+				Thread.sleep(1000);
+			}
+		}catch(Exception e){System.out.println(e);}
+	}
+
+}
+
+</textarea></div>
+<span class="filename">File: MyListener.java</span>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span class="keyword">import</span><span>&nbsp;javax.jms.*;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;MyListener&nbsp;</span><span class="keyword">implements</span><span>&nbsp;MessageListener&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;onMessage(Message&nbsp;m)&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">try</span><span>{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TextMessage&nbsp;msg=(TextMessage)m;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"following&nbsp;message&nbsp;is&nbsp;received:"</span><span>+msg.getText());&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<span class="keyword">catch</span><span>(JMSException&nbsp;e){System.out.println(e);}&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><textarea style="display: none;" name="code" class="java">import javax.jms.*;
+public class MyListener implements MessageListener {
+
+	public void onMessage(Message m) {
+		try{
+		TextMessage msg=(TextMessage)m;
+	
+		System.out.println("following message is received:"+msg.getText());
+		}catch(JMSException e){System.out.println(e);}
+	}
+}
+
+</textarea></div>
+<p>Run the Receiver class first then Sender class.</p>
+<!--
+<h4 class="h4">Output</h4>
+<div class="codeblock3"><pre>
+</pre></div>
+-->
+<hr>
+<h2 class="h2">JMS Topic Example</h2>
+<p>It is same as JMS Queue, but you need to change Queue to Topic, Sender to Publisher and Receiver to Subscriber.</p>
+<p>You need to create 2 JNDI named <b>myTopicConnectionFactory</b> and <b>myTopic</b>.</p>
+
+<span class="filename">File: MySender.java</span>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span class="keyword">import</span><span>&nbsp;java.io.BufferedReader;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">import</span><span>&nbsp;java.io.InputStreamReader;&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="keyword">import</span><span>&nbsp;javax.naming.*;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">import</span><span>&nbsp;javax.jms.*;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;MySender&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">try</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;<span class="comment">//Create&nbsp;and&nbsp;start&nbsp;connection</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InitialContext&nbsp;ctx=<span class="keyword">new</span><span>&nbsp;InitialContext();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TopicConnectionFactory&nbsp;f=(TopicConnectionFactory)ctx.lookup(<span class="string">"myTopicConnectionFactory"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TopicConnection&nbsp;con=f.createTopicConnection();&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;con.start();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//2)&nbsp;create&nbsp;queue&nbsp;session</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TopicSession&nbsp;ses=con.createTopicSession(<span class="keyword">false</span><span>,&nbsp;Session.AUTO_ACKNOWLEDGE);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//3)&nbsp;get&nbsp;the&nbsp;Topic&nbsp;object</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Topic&nbsp;t=(Topic)ctx.lookup(<span class="string">"myTopic"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//4)create&nbsp;TopicPublisher&nbsp;object&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TopicPublisher&nbsp;publisher=ses.createPublisher(t);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//5)&nbsp;create&nbsp;TextMessage&nbsp;object</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TextMessage&nbsp;msg=ses.createTextMessage();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//6)&nbsp;write&nbsp;message</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BufferedReader&nbsp;b=<span class="keyword">new</span><span>&nbsp;BufferedReader(</span><span class="keyword">new</span><span>&nbsp;InputStreamReader(System.in));&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span><span>(</span><span class="keyword">true</span><span>)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"Enter&nbsp;Msg,&nbsp;end&nbsp;to&nbsp;terminate:"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;s=b.readLine();&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(s.equals(</span><span class="string">"end"</span><span>))&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msg.setText(s);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//7)&nbsp;send&nbsp;message</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;publisher.publish(msg);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"Message&nbsp;successfully&nbsp;sent."</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//8)&nbsp;connection&nbsp;close</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;con.close();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<span class="keyword">catch</span><span>(Exception&nbsp;e){System.out.println(e);}&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><textarea style="display: none;" name="code" class="java">import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import javax.naming.*;
+import javax.jms.*;
+
+public class MySender {
+	public static void main(String[] args) {
+		try
+		{	//Create and start connection
+			InitialContext ctx=new InitialContext();
+			TopicConnectionFactory f=(TopicConnectionFactory)ctx.lookup("myTopicConnectionFactory");
+			TopicConnection con=f.createTopicConnection();
+			con.start();
+			//2) create queue session
+			TopicSession ses=con.createTopicSession(false, Session.AUTO_ACKNOWLEDGE);
+			//3) get the Topic object
+			Topic t=(Topic)ctx.lookup("myTopic");
+			//4)create TopicPublisher object		
+			TopicPublisher publisher=ses.createPublisher(t);
+			//5) create TextMessage object
+			TextMessage msg=ses.createTextMessage();
+			
+			//6) write message
+			BufferedReader b=new BufferedReader(new InputStreamReader(System.in));
+			while(true)
+			{
+				System.out.println("Enter Msg, end to terminate:");
+				String s=b.readLine();
+				if (s.equals("end"))
+					break;
+				msg.setText(s);
+				//7) send message
+				publisher.publish(msg);
+				System.out.println("Message successfully sent.");
+			}
+			//8) connection close
+			con.close();
+		}catch(Exception e){System.out.println(e);}
+	}
+}
+
+</textarea></div>
+<span class="filename">File: MyReceiver.java</span>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span class="keyword">import</span><span>&nbsp;javax.jms.*;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">import</span><span>&nbsp;javax.naming.InitialContext;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;MyReceiver&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">try</span><span>&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//1)&nbsp;Create&nbsp;and&nbsp;start&nbsp;connection</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InitialContext&nbsp;ctx=<span class="keyword">new</span><span>&nbsp;InitialContext();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TopicConnectionFactory&nbsp;f=(TopicConnectionFactory)ctx.lookup(<span class="string">"myTopicConnectionFactory"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TopicConnection&nbsp;con=f.createTopicConnection();&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;con.start();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//2)&nbsp;create&nbsp;topic&nbsp;session</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TopicSession&nbsp;ses=con.createTopicSession(<span class="keyword">false</span><span>,&nbsp;Session.AUTO_ACKNOWLEDGE);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//3)&nbsp;get&nbsp;the&nbsp;Topic&nbsp;object</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Topic&nbsp;t=(Topic)ctx.lookup(<span class="string">"myTopic"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//4)create&nbsp;TopicSubscriber</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TopicSubscriber&nbsp;receiver=ses.createSubscriber(t);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//5)&nbsp;create&nbsp;listener&nbsp;object</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyListener&nbsp;listener=<span class="keyword">new</span><span>&nbsp;MyListener();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//6)&nbsp;register&nbsp;the&nbsp;listener&nbsp;object&nbsp;with&nbsp;subscriber</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;receiver.setMessageListener(listener);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"Subscriber1&nbsp;is&nbsp;ready,&nbsp;waiting&nbsp;for&nbsp;messages..."</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"press&nbsp;Ctrl+c&nbsp;to&nbsp;shutdown..."</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span><span>(</span><span class="keyword">true</span><span>){&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thread.sleep(<span class="number">1000</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<span class="keyword">catch</span><span>(Exception&nbsp;e){System.out.println(e);}&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><textarea style="display: none;" name="code" class="java">import javax.jms.*;
+import javax.naming.InitialContext;
+
+public class MyReceiver {
+	public static void main(String[] args) {
+		try	{
+			//1) Create and start connection
+			InitialContext ctx=new InitialContext();
+			TopicConnectionFactory f=(TopicConnectionFactory)ctx.lookup("myTopicConnectionFactory");
+			TopicConnection con=f.createTopicConnection();
+			con.start();
+			//2) create topic session
+			TopicSession ses=con.createTopicSession(false, Session.AUTO_ACKNOWLEDGE);
+			//3) get the Topic object
+			Topic t=(Topic)ctx.lookup("myTopic");
+			//4)create TopicSubscriber
+			TopicSubscriber receiver=ses.createSubscriber(t);
+			
+			//5) create listener object
+			MyListener listener=new MyListener();
+			
+			//6) register the listener object with subscriber
+			receiver.setMessageListener(listener);
+						
+			System.out.println("Subscriber1 is ready, waiting for messages...");
+			System.out.println("press Ctrl+c to shutdown...");
+			while(true){				
+				Thread.sleep(1000);
+			}
+		}catch(Exception e){System.out.println(e);}
+	}
+
+}
+
+</textarea></div>
+<span class="filename">File: MyListener.java</span>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span class="keyword">import</span><span>&nbsp;javax.jms.*;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;MyListener&nbsp;</span><span class="keyword">implements</span><span>&nbsp;MessageListener&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;onMessage(Message&nbsp;m)&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">try</span><span>{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TextMessage&nbsp;msg=(TextMessage)m;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"following&nbsp;message&nbsp;is&nbsp;received:"</span><span>+msg.getText());&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<span class="keyword">catch</span><span>(JMSException&nbsp;e){System.out.println(e);}&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><textarea style="display: none;" name="code" class="java">import javax.jms.*;
+public class MyListener implements MessageListener {
+
+	public void onMessage(Message m) {
+		try{
+		TextMessage msg=(TextMessage)m;
+	
+		System.out.println("following message is received:"+msg.getText());
+		}catch(JMSException e){System.out.println(e);}
+	}
+}
+
+</textarea></div>
+<!--
+<h4 class="h4">Output</h4>
+<div class="codeblock3"><pre>
+</pre></div>
+-->
+
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="http://www.javatpoint.com/message-driven-bean">Message Driven Bean</a></span>
+</div>
+
+<!-- link -->
+<br><br>
+<div id="bottomnext">
+
+<a style="float:left" class="next" href="http://www.javatpoint.com/stateful-session-bean">&lt;&lt;prev</a>
+<a style="float:right" class="next" href="http://www.javatpoint.com/message-driven-bean">next&gt;&gt;</a>
+</div>
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>
+</div><br><div id="mobilemenu" style="clear:both"><script async="" src="JMS%20Tutorial%20-%20javatpoint_files/adsbygoogle.html"></script><!-- responsivemobile --><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4699858549023382" data-ad-slot="1236815518" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div><div id="right" style="width:15%;float:left;margin-left:10px;margin-top:10px;"><script async="" src="JMS%20Tutorial%20-%20javatpoint_files/adsbygoogle.html"></script> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-4699858549023382" data-ad-slot="4476401222"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({});</script><br><br><br><br><script async="" src="JMS%20Tutorial%20-%20javatpoint_files/adsbygoogle.html"></script> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-4699858549023382" data-ad-slot="4476401222"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({});</script><br><br><br><br>
+<!--<script id="mNCC" language="javascript"> medianet_width='160'; medianet_height= '600'; medianet_crid='694759290'; </script> <script id="mNSC" src="http://contextual.media.net/nmedianet.js?cid=8CU74TD10" language="javascript"></script> -->
+</div><div id="right1024" style="float:left;margin-left:10px;margin-top:120px;"><script async="" src="JMS%20Tutorial%20-%20javatpoint_files/adsbygoogle.html"></script><!-- right1024only --><ins class="adsbygoogle" style="display:inline-block;width:120px;height:600px" data-ad-client="ca-pub-4699858549023382" data-ad-slot="2180118716"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+<div id="footer" style="clear:both;width:100%">
+
+<script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-24880427-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();</script><hr><div style="padding:0px;margin:0px;text-align:center"><sup style="font:16px arial;">Like/Subscribe us for latest updates or newsletter </sup><a target="_blank" href="http://feeds.feedburner.com/javatpointsonoo"><img src="JMS%20Tutorial%20-%20javatpoint_files/rss1.png" alt="RSS Feed"></a><a target="_blank" href="http://feedburner.google.com/fb/a/mailverify?uri=javatpointsonoo"><img src="JMS%20Tutorial%20-%20javatpoint_files/mail1.png" alt="Subscribe to Get Email Alerts"></a><a target="_blank" href="https://www.facebook.com/javatpoint"><img src="JMS%20Tutorial%20-%20javatpoint_files/facebook1.jpg" alt="Facebook Page"></a><a target="_blank" rel="author" href="https://plus.google.com/u/0/113973042385691981314/posts"><img src="JMS%20Tutorial%20-%20javatpoint_files/google1.png" alt="Google Page"></a><a target="_blank" href="https://twitter.com/pagejavatpoint"><img src="JMS%20Tutorial%20-%20javatpoint_files/twitter1.png" alt="Twitter Page"></a><a target="_blank" href="http://javatpoint.blogspot.com/"><img src="JMS%20Tutorial%20-%20javatpoint_files/blog.png" alt="Blog Page"></a><a href="#" style="font:bold 18px arial;text-decoration:none;"><sup>↑Top</sup></a></div><div style="margin:auto 0px;line-height:20px;padding:0px 40px;font-size:12px;height:390px;background:#6699CC;color: white; font-family:serif; border-bottom: solid 1px #A3AE7E;"> <div id="innerfooter"> <div><span style="text-decoration:none;font-size:larger;font-family:serif;color:white;font-weight:bolder;">Tutorials</span> <hr><ul class="footer-list"> <li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/java-tutorial">» Core Java Tutorial</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/servlet-tutorial">» Servlet Tutorial</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/jsp-tutorial">» JSP Tutorial</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/java-mail-api-tutorial">» Mail API Tutorial</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/design-patterns-in-java">» Design Pattern Tutorial</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/struts-2-tutorial">» Struts Tutorial</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/spring-tutorial">» Spring Tutorial</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/hibernate-tutorial">» Hibernate Tutorial</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/android-tutorial">» Android Tutorial</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/javascript-tutorial">» JavaScript Tutorial</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/sql-tutorial">» SQL Tutorial</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/c-programming-language-tutorial">» C Tutorial</a></li> <li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/ajax-tutorial">» AJAX Tutorial</a></li> <li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/junit-tutorial">» JUnit Tutorial</a></li> <li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/jaxb-tutorial">» JAXB Tutorial</a></li> <li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/maven-tutorial">» Maven Tutorial</a></li></ul> </div> <div><span style="text-decoration:none;font-size:larger;font-family:serif;color:white;font-weight:bolder;">Interview Questions</span> <hr><ul class="footer-list"> <li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/corejava-interview-questions">» Java Interview</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/servletinterview">» Servlet Interview</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/jspinterview">» JSP Interview</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/hibernate-interview-questions">» Hibernate Interview</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/spring-interview-questions">» Spring Interview</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/android-interview-questions">» Android Interview</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/sql-interview-questions">» SQL Interview</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/pl-sql-interview-questions">» PL/SQL Interview</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/oracle-interview-questions">» Oracle Interview</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/mysql-interview-questions">» MySQL Interview</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/sql-server-interview-questions">» SQL Server Interview</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/mongodb-interview-questions">» MongoDB Interview</a></li> <li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/cloud-computing-interview-questions">» Cloud Interview</a></li> </ul> </div><div><a style="font-weight:bolder;text-decoration: none;text-align:center;font-size:larger;font-family:serif;color:white;" target="_blank" href="http://www.javatpoint.com/examaccess">Quizzes</a><hr><ul class="footer-list"><li><a target="_blank" href="http://www.javatpoint.com/core-java-quiz" style="text-decoration: none;font-family:serif;color:white;">» Core Java quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/servlet-quiz" style="text-decoration: none;font-family:serif;color:white;">» Servlet quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/jsp-quiz" style="text-decoration: none;font-family:serif;color:white;">» JSP quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/struts-quiz" style="text-decoration: none;font-family:serif;color:white;">» Struts2 quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/android-quiz" style="text-decoration: none;font-family:serif;color:white;">» Android quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/scjp-quiz" style="text-decoration: none;font-family:serif;color:white;">» OCJP quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/scwcd-quiz" style="text-decoration: none;font-family:serif;color:white;">» OCWCD quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/hibernate-quiz" style="text-decoration: none;font-family:serif;color:white;">» Hibernate quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/spring-quiz" style="text-decoration: none;font-family:serif;color:white;">» Spring quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/c-quiz" style="text-decoration: none;font-family:serif;color:white;">» C quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/cloud-computing-quiz" style="text-decoration: none;font-family:serif;color:white;">» Cloud Computing quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/javascript-quiz" style="text-decoration: none;font-family:serif;color:white;">» JavaScript quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/sql-quiz" style="text-decoration: none;font-family:serif;color:white;">» SQL quiz</a></li></ul></div><div><a style="font-weight:bolder;text-decoration: none;font-size:larger;font-family:serif;color:white;text-align:center;" target="_blank" href="http://www.javatpoint.com/forum">Forum</a><hr><ul class="footer-list"><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/forum.jsp?category=corejava">» Core Java Ques.</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/forum.jsp?category=servlet">» Servlet Ques.</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/forum.jsp?category=jsp">» JSP Ques.</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/forum.jsp?category=struts">» Struts Ques.</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/forum.jsp?category=spring">» Spring Ques.</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/forum.jsp?category=hibernate">» Hibernate Ques.</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/forum.jsp?category=android">» Android Ques.</a></li></ul><hr><a style="font-weight:bolder;text-decoration: none;text-align:center;font-size:larger;font-family:serif;color:white;" href="http://www.javatpoint.com/free-java-projects">Projects</a><hr><a style="font-weight:bolder;text-decoration: none;font-size:larger;font-family:serif;text-align:center;color:white;" href="http://www.sssit.org/" rel="nofollow">SSS IT PVT LTD</a><hr><ul class="footer-list"><li><a rel="nofollow" href="http://www.sssit.org/development" style="text-decoration: none;font-family:serif;color:white;">» Development</a></li><li><a href="http://www.javatpoint.com/training" style="text-decoration: none;font-family:serif;color:white;">» Training</a></li><li><a rel="nofollow" href="http://www.sssit.org/seo" style="text-decoration: none;font-family:serif;color:white;">» SEO</a></li><li><a rel="nofollow" href="http://www.sssit.org/consultancy" style="text-decoration: none;font-family:serif;color:white;">» Consultancy</a></li></ul></div><div style="border-right:2px solid white;"><span style="font-weight:bolder;text-decoration: none;font-size:larger;font-family:serif;color:white;float:right;padding-right:16px;">CONTACT US</span><br><hr><p style="text-align:center;border-bottom:1px solid white;padding-bottom:30px;">Tel. : 0120-4256464<br>Mob. : +91 9990449935<br>Email : enquiry@sssit.org<br>Address: Plot - 6, GT Road,<br>Near MMX Mall, <br>Mohan Nagar, Ghaziabad,<br>201007, UP, India<br><a href="http://www.javatpoint.com/contact-us" style="text-decoration: none;font-family:serif;color:white;">» Contact Us</a><br><a href="http://www.javatpoint.com/privacy-policy" style="text-decoration: none;font-family:serif;color:white;">» Privacy Policy</a></p><p style="text-align:center;border-bottom:1px solid white;padding-bottom:30px;padding-left:none;"><br>© 2011-2014 Javatpoint.<br> All Rights Reserved.<br><a href="http://www.dmca.com/Protection/Status.aspx?ID=e8b533d5-7356-47f5-820b-72c890f03a4e" rel="nofollow" title="DMCA"> <img src="JMS%20Tutorial%20-%20javatpoint_files/dmca_protected_sml_120c.png" alt="DMCA.com"></a></p></div></div></div>
+</div></div></div><script src="JMS%20Tutorial%20-%20javatpoint_files/shcoreandbrush.js"></script><script type="text/javascript"> dp.SyntaxHighlighter.HighlightAll('code'); </script>  </body></html>

@@ -1,0 +1,11 @@
+<NModule>
+   <service class="net.sf.selibs.tcp.nio.module.HConnector">
+      <sleepInterval>0</sleepInterval>
+      <dispatcher>
+         <sleepInterval>0</sleepInterval>
+         <processor class="net.sf.selibs.tcp.nio.http.HttpBridge">
+            <httpProc class="net.sf.selibs.tcp.nio.http.HEchoProcessor"/>
+         </processor>
+      </dispatcher>
+   </service>
+</NModule>

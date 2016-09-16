@@ -1,0 +1,35 @@
+<TCPServer>
+   <sleepInterval>0</sleepInterval>
+   <cfg>
+      <ip>127.0.0.1</ip>
+      <port>2020</port>
+      <backlog>1000</backlog>
+   </cfg>
+   <threadPoolFactory>
+      <minThreads>10</minThreads>
+      <maxThreads>10</maxThreads>
+      <queueType>SYNCHRONOUS</queueType>
+      <keepAliveTime>60</keepAliveTime>
+   </threadPoolFactory>
+   <handler class="net.sf.selibs.tcp.links.StreamsLink">
+      <next class="net.sf.selibs.tcp.links.BufferedLink">
+         <next class="net.sf.selibs.tcp.links.ChooserHandler">
+            <handlers class="java.util.HashMap">
+               <entry>
+                  <string>initiator</string>
+                  <object class="net.sf.selibs.tcp.links.ObjectLink">
+                     <next class="net.sf.selibs.messaging.sync.tcp.Initiator"/>
+                  </object>
+               </entry>
+               <entry>
+                  <string>responder</string>
+                  <object class="net.sf.selibs.tcp.links.ObjectLink">
+                     <next class="net.sf.selibs.messaging.sync.tcp.Responder"/>
+                  </object>
+               </entry>
+            </handlers>
+         </next>
+      </next>
+   </handler>
+   <ssf class="net.sf.selibs.tcp.factory.DefaultServerSocketFactory"/>
+</TCPServer>

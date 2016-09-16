@@ -1,0 +1,16 @@
+<NModule>
+   <service class="net.sf.selibs.tcp.nio.module.Acceptor">
+      <sleepInterval>0</sleepInterval>
+      <config>
+         <ip>127.0.0.1</ip>
+         <port>1256</port>
+         <backlog>1000</backlog>
+      </config>
+      <dispatcher>
+         <sleepInterval>0</sleepInterval>
+         <processor class="net.sf.selibs.tcp.nio.http.HttpBridge">
+            <httpProc class="net.sf.selibs.tcp.nio.http.HEchoProcessor"/>
+         </processor>
+      </dispatcher>
+   </service>
+</NModule>

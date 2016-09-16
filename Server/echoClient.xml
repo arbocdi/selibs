@@ -1,0 +1,13 @@
+<TCPClient>
+   <cfg>
+      <ip>127.0.0.1</ip>
+      <port>12345</port>
+      <timeout>10000</timeout>
+   </cfg>
+   <handler class="net.sf.selibs.tcp.links.StreamsLink">
+      <next class="net.sf.selibs.tcp.links.BufferedLink">
+         <next class="net.sf.selibs.tcp.BinaryEchoClient"/>
+      </next>
+   </handler>
+   <sf class="net.sf.selibs.tcp.factory.DefaultSocketFactory"/>
+</TCPClient>

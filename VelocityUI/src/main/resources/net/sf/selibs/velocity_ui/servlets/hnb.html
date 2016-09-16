@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>$title</title>
+        <meta charset="UTF-8">
+        <style>$style</style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                <h1>$header</h1>
+            </div>
+            <div id="nav">
+                #foreach( $link in $links )
+                    <a $link.getClassAttr() href="$link.getPath()">$link.getName()</a>
+                #end
+            </div>
+            <div id="body">
+                $body
+            </div>
+        </div>
+    </body>
+</html>

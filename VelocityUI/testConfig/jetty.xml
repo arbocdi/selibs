@@ -1,0 +1,18 @@
+<serverConfig>
+   <handlerConfig>
+      <path>/app</path>
+      <servlets class="java.util.LinkedList">
+         <servletConfig>
+            <path>/hello</path>
+            <servlet class="net.sf.selibs.velocity_ui.jetty.HelloServlet"/>
+            <async>false</async>
+            <initOrder>0</initOrder>
+         </servletConfig>
+      </servlets>
+   </handlerConfig>
+   <connectorConfig>
+      <host>127.0.0.1</host>
+      <port>2121</port>
+      <timeout>30000</timeout>
+   </connectorConfig>
+</serverConfig>

@@ -1,0 +1,22 @@
+<TCPClientService>
+   <sleepInterval>10000</sleepInterval>
+   <client>
+      <cfg>
+         <ip>127.0.0.1</ip>
+         <port>2345</port>
+         <backlog>1000</backlog>
+         <timeout>60000</timeout>
+      </cfg>
+      <handler class="net.sf.selibs.tcp.links.StreamsLink">
+         <next class="net.sf.selibs.tcp.links.BufferedLink">
+            <next class="net.sf.selibs.tcp.links.ChooserClient">
+               <next class="net.sf.selibs.tcp.links.ObjectLink">
+                  <next class="net.sf.selibs.messaging.sync.tcp.Responder"/>
+               </next>
+               <linkName>Initiator0</linkName>
+            </next>
+         </next>
+      </handler>
+      <sf class="net.sf.selibs.tcp.factory.DefaultSocketFactory"/>
+   </client>
+</TCPClientService>

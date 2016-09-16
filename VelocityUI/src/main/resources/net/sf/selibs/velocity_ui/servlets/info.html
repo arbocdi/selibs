@@ -1,0 +1,18 @@
+<a class="a_button" href="$path.toString()?action=gc" style="width:120px;">Perform GC</a>
+<div style="margin-left:138px;">
+    <table class = "data_table">
+        <tr>
+            <td colspan="2" class="data_table_header">Info</td>
+        </tr>
+        <tr>
+            <th>parameter name</th>
+            <th>parameter value</th>
+        </tr>
+        #foreach($pair in $pairs )
+        <tr>
+            <td>$pair.getKey()</td>
+            <td>$pair.getValue()</td>
+        </tr>
+        #end
+    </table>
+</div>

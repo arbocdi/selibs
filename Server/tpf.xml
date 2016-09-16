@@ -1,0 +1,6 @@
+<threadPoolFactory>
+   <minThreads>10</minThreads>
+   <maxThreads>10</maxThreads>
+   <queueType>SYNCHRONOUS</queueType>
+   <keepAliveTime>60</keepAliveTime>
+</threadPoolFactory>

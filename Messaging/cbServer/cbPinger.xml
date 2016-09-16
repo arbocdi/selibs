@@ -1,0 +1,5 @@
+<pinger>
+   <sleepInterval>1000</sleepInterval>
+   <destination>echo</destination>
+   <source>pinger</source>
+</pinger>

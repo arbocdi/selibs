@@ -1,0 +1,59 @@
+*{
+    padding:0px;
+    margin:0px;
+}
+#container {
+    width:100%;
+}
+#header {
+    text-align:center;
+    background-color: $style.getHeaderBGcolor();
+    color:$style.getHeaderColor();
+    border:1px solid #fff;
+}
+#nav {
+    background-color: $style.getHeaderBGcolor();
+    border:1px solid #fff;
+    overflow:auto;
+}
+#body{
+    border:1px solid #fff;
+}
+.a_button {
+    list-style-type: none;
+}
+.a_button:hover:not(.a_button_active) {
+    background-color:$style.getHoverColor();
+}
+.a_button {
+    border-right: 1px solid #fff;
+    display: block;
+    float:left;
+    padding: 8px;
+    background-color: $style.getHeaderBGcolor();
+    color: $style.getHeaderColor();
+    text-align: left;
+    text-decoration: none;
+}
+
+.a_button_active {
+    background-color:$style.getActiveColor();
+}
+
+.data_table{
+    width:100%;
+    border-collapse:collapse;
+}
+.data_table td,th{
+    border:1px solid $style.getHeaderBGcolor();
+}
+
+.data_table_header{
+    text-align:center;
+    background-color: $style.getHeaderBGcolor();
+    color: $style.getHeaderColor();;
+}
+.data_table tr:nth-child(2n+1){
+    background-color: $style.getDataTable2n1Color();
+    
+}

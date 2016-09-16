@@ -1,0 +1,81 @@
+<MEServer id="0">
+   <srv id="1">
+      <sleepInterval id="2">0</sleepInterval>
+      <cfg id="3">
+         <ip id="4">127.0.0.1</ip>
+         <port id="5">2345</port>
+         <backlog id="6">1000</backlog>
+         <timeout id="7">60000</timeout>
+      </cfg>
+      <threadPoolFactory id="8">
+         <minThreads id="9">5</minThreads>
+         <maxThreads id="10">10</maxThreads>
+         <queueType id="11">SYNCHRONOUS</queueType>
+         <keepAliveTime id="12">60</keepAliveTime>
+      </threadPoolFactory>
+      <handler class="net.sf.selibs.tcp.links.StreamsLink" id="13">
+         <next class="net.sf.selibs.tcp.links.BufferedLink" id="14">
+            <next class="net.sf.selibs.tcp.links.ChooserHandler" id="15">
+               <handlers class="java.util.HashMap" id="16">
+                  <entry>
+                     <string id="17">Initiator0</string>
+                     <object class="net.sf.selibs.tcp.links.ObjectLink" id="18">
+                        <next class="net.sf.selibs.messaging.sync.tcp.Initiator" id="19">
+                           <me id="20"/>
+                        </next>
+                     </object>
+                  </entry>
+                  <entry>
+                     <string id="21">Initiator2</string>
+                     <object class="net.sf.selibs.tcp.links.ObjectLink" id="22">
+                        <next class="net.sf.selibs.messaging.sync.tcp.Initiator" id="23">
+                           <me id="24"/>
+                        </next>
+                     </object>
+                  </entry>
+                  <entry>
+                     <string id="25">Initiator1</string>
+                     <object class="net.sf.selibs.tcp.links.ObjectLink" id="26">
+                        <next class="net.sf.selibs.messaging.sync.tcp.Initiator" id="27">
+                           <me id="28"/>
+                        </next>
+                     </object>
+                  </entry>
+                  <entry>
+                     <string id="29">Initiator4</string>
+                     <object class="net.sf.selibs.tcp.links.ObjectLink" id="30">
+                        <next class="net.sf.selibs.messaging.sync.tcp.Initiator" id="31">
+                           <me id="32"/>
+                        </next>
+                     </object>
+                  </entry>
+                  <entry>
+                     <string id="33">Initiator3</string>
+                     <object class="net.sf.selibs.tcp.links.ObjectLink" id="34">
+                        <next class="net.sf.selibs.messaging.sync.tcp.Initiator" id="35">
+                           <me id="36"/>
+                        </next>
+                     </object>
+                  </entry>
+               </handlers>
+            </next>
+         </next>
+      </handler>
+      <ssf class="net.sf.selibs.tcp.factory.DefaultServerSocketFactory" id="37"/>
+   </srv>
+   <mePool id="38">
+      <exchangers class="java.util.LinkedList" id="39">
+         <messageExchanger class="net.sf.selibs.messaging.sync.SME" reference="20"/>
+         <messageExchanger class="net.sf.selibs.messaging.sync.SME" reference="28"/>
+         <messageExchanger class="net.sf.selibs.messaging.sync.SME" reference="24"/>
+         <messageExchanger class="net.sf.selibs.messaging.sync.SME" reference="36"/>
+         <messageExchanger class="net.sf.selibs.messaging.sync.SME" reference="32"/>
+      </exchangers>
+   </mePool>
+   <pinger id="40">
+      <sleepInterval id="41">10000</sleepInterval>
+      <me class="net.sf.selibs.messaging.MEPool" reference="38"/>
+      <destination id="42">echo</destination>
+      <source id="43">meServer</source>
+   </pinger>
+</MEServer>

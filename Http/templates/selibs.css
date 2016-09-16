@@ -1,0 +1,79 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+#container{
+    margin: 2px;
+}
+#top-menu {
+    border: 1px solid #bbb;
+    overflow:hidden;
+    background-color: #333;
+    color: white;
+}
+#left-menu{
+    border: 1px solid #bbb;
+    background-color: #333;
+    color: white;
+    position:fixed;
+    margin-top: 2px;
+}
+#content{
+    margin-left: 100px;
+    margin-top: 2px;
+}
+.menu-item{
+    background-color: #333;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menu-item:hover:not(.menu-item-active):not(p) {
+    background-color: #111;
+}
+.menu-item-active {
+    background-color: #4CAF50;
+}
+
+.top-menu-left {
+    float: left;
+    border-right: 1px solid #bbb;
+}
+.top-menu-right {
+    float: right;
+    border-left: 1px solid #bbb;
+}
+.left-menu-item{
+    border-bottom: 1px solid #bbb;
+}
+
+.form-table{
+    border: 1px solid #bbb;
+}
+
+.data-table{
+    width:100%;
+    border-collapse: collapse;
+    margin: 2px 0px;
+}
+.data-table th {
+    background-color: #333;
+    border: 1px solid #bbb;
+    color: white;
+    padding: 2px;
+}
+.data-table td {
+    border: 1px solid #bbb;
+    padding: 2px;
+
+}
+.data-table tr:nth-child(2n+3) {
+    background-color: #ddd;
+}
+
+.data-table tr:hover {
+    background-color: #ded;
+}

@@ -1,0 +1,18 @@
+<p>Total connections established: $connections.size()</p>
+<table class = "data_table">
+    <tr>
+        <td colspan="3" class="data_table_header">Established Connections</td>
+    </tr>
+    <tr>
+        <th>id</th>
+        <th>local</th>
+        <th>remote</th>
+    </tr>
+    #foreach($con in $connections )
+    <tr>
+        <td>$con.getId()</td>
+        <td>$con.getLocalAddress()</td>
+        <td>$con.getRemoteAddress()</td>
+    </tr>
+    #end
+</table>

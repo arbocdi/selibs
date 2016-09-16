@@ -1,0 +1,89 @@
+<serverConfig>
+   <handlerConfig>
+      <path>/app</path>
+      <servlets class="java.util.LinkedList">
+         <servletConfig>
+            <path>/ui/*</path>
+            <servlet class="net.sf.selibs.velocity_ui.base.RenderServlet">
+               <styleLoader class="net.sf.selibs.velocity_ui.base.CPTemplateLoader">
+                  <templateName>hnb.css</templateName>
+                  <class>net.sf.selibs.velocity_ui.base.RenderServlet</class>
+               </styleLoader>
+               <style>
+                  <headerBGcolor>#333</headerBGcolor>
+                  <headerColor>#fff</headerColor>
+                  <hoverColor>#111</hoverColor>
+                  <dataTable2n1Color>#ccc</dataTable2n1Color>
+                  <activeColor>#4CAF50</activeColor>
+               </style>
+               <component class="net.sf.selibs.velocity_ui.base.CompositeComponent">
+                  <components class="java.util.concurrent.ConcurrentHashMap">
+                     <entry>
+                        <string>nav</string>
+                        <component class="net.sf.selibs.velocity_ui.components.LinksComponent">
+                           <links class="java.util.LinkedList">
+                              <HLink>
+                                 <path>echo</path>
+                                 <name>echo</name>
+                              </HLink>
+                              <HLink>
+                                 <path>echo1</path>
+                                 <name>echo1</name>
+                              </HLink>
+                              <HLink>
+                                 <path>connections</path>
+                                 <name>connections</name>
+                              </HLink>
+                           </links>
+                        </component>
+                     </entry>
+                     <entry>
+                        <string>header</string>
+                        <component class="net.sf.selibs.velocity_ui.base.RenderServletTest$HeaderComponent"/>
+                     </entry>
+                     <entry>
+                        <string>body</string>
+                        <component class="net.sf.selibs.velocity_ui.base.ComponentMap">
+                           <components class="java.util.concurrent.ConcurrentHashMap">
+                              <entry>
+                                 <string>/echo</string>
+                                 <component class="net.sf.selibs.velocity_ui.components.EchoComponent"/>
+                              </entry>
+                              <entry>
+                                 <string>/echo1</string>
+                                 <component class="net.sf.selibs.velocity_ui.components.EchoComponent"/>
+                              </entry>
+                              <entry>
+                                 <string>/connections</string>
+                                 <component class="net.sf.selibs.velocity_ui.components.ConnectionPrinterComponent"/>
+                              </entry>
+                           </components>
+                           <defaultComponent class="net.sf.selibs.velocity_ui.components.NotFoundComponent"/>
+                        </component>
+                     </entry>
+                     <entry>
+                        <string>title</string>
+                        <component class="net.sf.selibs.velocity_ui.base.RenderServletTest$HeaderComponent"/>
+                     </entry>
+                  </components>
+                  <htmlLoader class="net.sf.selibs.velocity_ui.base.CPTemplateLoader">
+                     <templateName>hnb.html</templateName>
+                     <class>net.sf.selibs.velocity_ui.base.CompositeComponent</class>
+                  </htmlLoader>
+               </component>
+               <htmlLoader class="net.sf.selibs.velocity_ui.base.CPTemplateLoader">
+                  <templateName>render.html</templateName>
+                  <class>net.sf.selibs.velocity_ui.base.RenderServlet</class>
+               </htmlLoader>
+            </servlet>
+            <async>false</async>
+            <initOrder>0</initOrder>
+         </servletConfig>
+      </servlets>
+   </handlerConfig>
+   <connectorConfig>
+      <host>127.0.0.1</host>
+      <port>2121</port>
+      <timeout>30000</timeout>
+   </connectorConfig>
+</serverConfig>

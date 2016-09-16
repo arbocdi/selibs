@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SELibs layout</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="selibs.css">
+    </head>
+    <body>
+        <div id="container">
+            <div id="top-menu">
+                                    <p class="menu-item top-menu-left" >info1</p>
+                                    <p class="menu-item top-menu-left" >info2</p>
+                                                    <a class="menu-item top-menu-right" href="url1">login</a>
+                                    <a class="menu-item top-menu-right" href="url2">logout</a>
+                                <div style="float:left;left:50%; position: absolute;">
+                    <p class="menu-item" style="float:left;left:-50%; position: relative;color: #eae718">
+                        TestApplication
+                    </p>
+                </div>
+            </div>
+            <div id="left-menu">
+                                    <a class="menu-item left-menu-item" href="url1">home</a> 
+                                    <a class="menu-item left-menu-item" href="url2">info</a> 
+                                    <a class="menu-item left-menu-item" href="url2">data</a> 
+                            </div>
+            <div id="content">
+                <form name="form1" action="http://host.com/menu.html" method="POST">
+                    <table class="form-table">
+                        <tr>
+                            <td>
+                                <label for="uname">Username:</label>
+                            </td>
+                            <td>
+                                <input type="text" name="username"  id="uname" value="u1"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="upw">Password:</label>
+                            </td>
+                            <td>
+                                <input type="password" name="pw" id="upw" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" value="ok" style="width:100px;"/>
+                            </td>
+                            <td>
+                                <input type="reset" value="cancel" style="width:100px;"/>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                <table class="data-table">
+                    <tr>
+                        <th>name1</th>
+                        <th>name2</th>
+                        <th>pw</th>
+                        <th>data</th>
+                    </tr>
+                    <tr>
+                        <td>arboc</td>
+                        <td>di</td>
+                        <td>123</td>
+                        <td>pvp</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

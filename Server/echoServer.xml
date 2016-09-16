@@ -1,0 +1,20 @@
+<TCPServer>
+   <sleepInterval>0</sleepInterval>
+   <cfg>
+      <ip>127.0.0.1</ip>
+      <port>12345</port>
+      <backlog>1000</backlog>
+   </cfg>
+   <threadPoolFactory>
+      <minThreads>10</minThreads>
+      <maxThreads>1000</maxThreads>
+      <queueType>SYNCHRONOUS</queueType>
+      <keepAliveTime>60</keepAliveTime>
+   </threadPoolFactory>
+   <handler class="net.sf.selibs.tcp.links.StreamsLink">
+      <next class="net.sf.selibs.tcp.links.BufferedLink">
+         <next class="net.sf.selibs.tcp.links.BinaryEcho"/>
+      </next>
+   </handler>
+   <ssf class="net.sf.selibs.tcp.factory.DefaultServerSocketFactory"/>
+</TCPServer>

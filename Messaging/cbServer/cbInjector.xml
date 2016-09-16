@@ -1,0 +1,23 @@
+<bindings id="0">
+   <data class="java.util.concurrent.ConcurrentHashMap" id="1">
+      <entry>
+         <string id="2">net.sf.selibs.messaging.MessageExchanger</string>
+         <object class="net.sf.selibs.messaging.sync.SME" id="3"/>
+      </entry>
+      <entry>
+         <string id="4">net.sf.selibs.messaging.sync.SME</string>
+         <object class="net.sf.selibs.messaging.sync.SME" ref="3"/>
+      </entry>
+      <entry>
+         <string id="5">net.sf.selibs.messaging.sync.handlers.MessageHandler</string>
+         <object class="net.sf.selibs.messaging.sync.handlers.HandlerMap" id="6">
+            <handlers class="java.util.concurrent.ConcurrentHashMap" id="7">
+               <entry>
+                  <string id="8">echo</string>
+                  <messageHandler class="net.sf.selibs.messaging.sync.handlers.EchoHandler" id="9"/>
+               </entry>
+            </handlers>
+         </object>
+      </entry>
+   </data>
+</bindings>

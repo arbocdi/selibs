@@ -1,0 +1,15 @@
+<bindings id="0">
+   <data class="java.util.concurrent.ConcurrentHashMap" id="1">
+      <entry>
+         <string id="2">net.sf.selibs.messaging.sync.handlers.MessageHandler</string>
+         <object class="net.sf.selibs.messaging.sync.handlers.HandlerMap" id="3">
+            <handlers class="java.util.concurrent.ConcurrentHashMap" id="4">
+               <entry>
+                  <string id="5">echo</string>
+                  <messageHandler class="net.sf.selibs.messaging.sync.handlers.EchoHandler" id="6"/>
+               </entry>
+            </handlers>
+         </object>
+      </entry>
+   </data>
+</bindings>

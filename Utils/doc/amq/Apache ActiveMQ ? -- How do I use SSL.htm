@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+    <link href="Apache%20ActiveMQ%20%E2%84%A2%20--%20How%20do%20I%20use%20SSL_files/site.css" rel="stylesheet" type="text/css">
+    <link href="Apache%20ActiveMQ%20%E2%84%A2%20--%20How%20do%20I%20use%20SSL_files/type-settings.css" rel="stylesheet" type="text/css">
+    <script src="Apache%20ActiveMQ%20%E2%84%A2%20--%20How%20do%20I%20use%20SSL_files/prototype.js" type="text/javascript"></script>
+    <script src="Apache%20ActiveMQ%20%E2%84%A2%20--%20How%20do%20I%20use%20SSL_files/rico.js" type="text/javascript"></script>    
+    <script src="Apache%20ActiveMQ%20%E2%84%A2%20--%20How%20do%20I%20use%20SSL_files/site.js" type="text/javascript"></script>
+    <style type="text/css">
+      .maincontent { overflow:hidden; }
+    </style>
+    <!--[if IE]>
+    <style type="text/css">
+      .maincontent { width:100%; }
+    </style>
+    <![endif]-->
+
+          <link href="Apache%20ActiveMQ%20%E2%84%A2%20--%20How%20do%20I%20use%20SSL_files/shCore.css" rel="stylesheet" type="text/css"> 
+      <link href="Apache%20ActiveMQ%20%E2%84%A2%20--%20How%20do%20I%20use%20SSL_files/shThemeEclipse.css" rel="stylesheet" type="text/css"> 
+      <script src="Apache%20ActiveMQ%20%E2%84%A2%20--%20How%20do%20I%20use%20SSL_files/shCore.js" type="text/javascript"></script> 
+              <script src="Apache%20ActiveMQ%20%E2%84%A2%20--%20How%20do%20I%20use%20SSL_files/shBrushJava.js" type="text/javascript"></script> 
+         
+      <script type="text/javascript"> 
+        SyntaxHighlighter.defaults['toolbar'] = false; 
+        SyntaxHighlighter.all(); 
+      </script> 
+    
+    <title>
+    Apache ActiveMQ ™ -- How do I use SSL
+    </title>
+</head>
+<body>
+<div class="white_box">
+<div class="header">
+  <div class="header_l">
+    <div class="header_r">
+    </div>
+  </div>
+</div>
+<div class="content">
+  <div class="content_l">
+    <div class="content_r">
+      <div>
+
+<!-- Banner -->
+<p>
+	</p><div id="asf_logo">
+	<div id="activemq_logo">
+            <a shape="rect" style="float:left; width:280px;display:block;text-indent:-5000px;text-decoration:none;line-height:60px; margin-top:10px; margin-left:100px;" href="http://activemq.apache.org/" title="The most popular and powerful open source Message Broker">ActiveMQ</a> ™
+            <a shape="rect" style="float:right; width:210px;display:block;text-indent:-5000px;text-decoration:none;line-height:60px; margin-top:15px; margin-right:10px;" href="http://www.apache.org/" title="The Apache Software Foundation">ASF</a>
+	</div>
+        </div>
+<p></p>
+        <div class="top_red_bar">
+          <div id="site-breadcrumbs">
+<a href="http://activemq.apache.org/community.html">Community</a>&nbsp;&gt;&nbsp;<a href="http://activemq.apache.org/faq.html">FAQ</a>&nbsp;&gt;&nbsp;<a href="http://activemq.apache.org/using-apache-activemq.html">Using Apache ActiveMQ</a>&nbsp;&gt;&nbsp;<a href="http://activemq.apache.org/how-do-i-use-ssl.html">How do I use SSL</a>
+          </div>
+          <div id="site-quicklinks">
+<p><a shape="rect" href="http://activemq.apache.org/download.html">Download</a> | <a shape="rect" class="external-link" href="http://activemq.apache.org/maven/5.10.0/apidocs/index.html">JavaDocs</a> <a shape="rect" href="http://activemq.apache.org/javadocs.html">More...</a> | <a shape="rect" href="http://activemq.apache.org/source.html">Source</a> | <a shape="rect" href="http://activemq.apache.org/discussion-forums.html">Forums</a> | <a shape="rect" href="http://activemq.apache.org/support.html">Support</a></p>
+          </div>
+        </div>
+
+  <table border="0">
+  <tbody>
+        <tr>
+        <td valign="top" width="100%">
+<div class="wiki-content maincontent"><h3 id="HowdoIuseSSL-SettinguptheKeyandTrustStores">Setting up the Key and Trust Stores</h3><p>Also see <a shape="rect" class="external-link" href="http://jakarta.apache.org/tomcat/tomcat-5.5-doc/ssl-howto.html">Tomcat's SSL instructions</a> for more info. The following was provided by Colin Kilburn. Thanks Colin!</p>    <div class="aui-message hint shadowed information-macro">
+                    <p class="title">ActiveMQ uses dummy credentials by default</p>
+                            <span class="aui-icon icon-hint">Icon</span>
+                <div class="message-content">
+                            <p>ActiveMQ includes key and trust stores 
+that reference a dummy self signed cert. When you create a broker 
+certificate and stores for your installation, either overwrite the 
+values in the conf directory or delete the existing dummy key and trust 
+stores so they cannot interfere)</p>
+                    </div>
+    </div>
+<ol><li><p>Using keytool, create a certificate for the broker:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<div><div id="highlighter_249666" class="syntaxhighlighter nogutter  java"><table cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java plain">keytool -genkey -alias broker -keyalg RSA -keystore broker.ks</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li><p>Export the broker's certificate so it can be shared with clients:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<div><div id="highlighter_266187" class="syntaxhighlighter nogutter  java"><table cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java plain">keytool -export -alias broker -keystore broker.ks -file broker_cert</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li><p>Create a certificate/keystore for the client:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<div><div id="highlighter_364912" class="syntaxhighlighter nogutter  java"><table cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java plain">keytool -genkey -alias client -keyalg RSA -keystore client.ks</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li><p>Create a truststore for the client, and import the broker's certificate. This establishes that the client "trusts" the broker:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<div><div id="highlighter_392181" class="syntaxhighlighter nogutter  java"><table cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java plain">keytool -</code><code class="java keyword">import</code> <code class="java plain">-alias broker -keystore client.ts -file broker_cert</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li></ol><h3 id="HowdoIuseSSL-StartingtheBroker">Starting the Broker</h3><h4 id="HowdoIuseSSL-Usingthejavax.net.ssl.*SystemProperties">Using the javax.net.ssl.* System Properties</h4><p>Before starting the broker's VM set the SSL_OPTS enviorment variable so that it knows to use the broker keystore.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<div><div id="highlighter_185662" class="syntaxhighlighter nogutter  java"><table cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java plain">export SSL_OPTS = -Djavax.net.ssl.keyStore=/path/to/broker.ks -Djavax.net.ssl.keyStorePassword=password</code></div></div></td></tr></tbody></table></div></div>
+</div></div><h4 id="HowdoIuseSSL-UsingSpringtoconfigureSSLforaBrokerinstance">Using Spring to configure SSL for a Broker instance</h4><p>Sometimes
+ the use of javax.net.ssl.* system properties is not appropriate as they
+ effect all SSL users in a JVM. ActiveMQ 5.2.x adds an 
+&lt;sslContext&gt; element to the &lt;amq:broker&gt; that allows a 
+broker specific set of SSL properties to be configured.</p><p>The SslContext <a shape="rect" class="external-link" href="https://svn.apache.org/repos/asf/activemq/trunk/activemq-unit-tests/src/test/java/org/apache/activemq/transport/tcp/SslContextBrokerServiceTest.java">test case</a>
+ validates starting an SSL transport listener using the configuration 
+specified in the broker Xbean. The SslContext element is added to the 
+broker as follows:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<div><div id="highlighter_47828" class="syntaxhighlighter nogutter  java"><table cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java plain">&lt;beans</code></div><div class="line number2 index1 alt1"><code class="java spaces">&nbsp;&nbsp;</code><code class="java plain">&lt;amq:broker useJmx="</code><code class="java keyword">false</code><code class="java plain">" persistent="</code><code class="java keyword">false</code><code class="java plain">"&gt;</code></div><div class="line number3 index2 alt2">&nbsp;</div><div class="line number4 index3 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;amq:sslContext&gt;</code></div><div class="line number5 index4 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;amq:sslContext</code></div><div class="line number6 index5 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">keyStore="server.keystore" keyStorePassword="password"</code></div><div class="line number7 index6 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">trustStore="client.keystore" trustStorePassword="password"/&gt;</code></div><div class="line number8 index7 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;/amq:sslContext&gt;</code></div><div class="line number9 index8 alt2">&nbsp;</div><div class="line number10 index9 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;amq:transportConnectors&gt;</code></div><div class="line number11 index10 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;amq:transportConnector uri="ssl:</code><code class="java comments">//localhost:61616" /&gt;</code></div><div class="line number12 index11 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;/amq:transportConnectors&gt;</code></div><div class="line number13 index12 alt2">&nbsp;</div><div class="line number14 index13 alt1"><code class="java spaces">&nbsp;&nbsp;</code><code class="java plain">&lt;/amq:broker&gt;</code></div><div class="line number15 index14 alt2"><code class="java plain">&lt;/beans&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div></div><p>The SslContext is used to configure the <a shape="rect" class="external-link" href="https://svn.apache.org/repos/asf/activemq/trunk/activemq-client/src/main/java/org/apache/activemq/transport/tcp/SslTransportFactory.java">SslTransportFactory</a> for that broker. Full details of the configuration options available can be seen in the <a shape="rect" class="external-link" href="http://activemq.apache.org/schema/core/activemq-core-5.2-SNAPSHOT.xsd">schema definition</a> or in the accessors of <a shape="rect" class="external-link" href="https://svn.apache.org/repos/asf/activemq/trunk/activemq-spring/src/main/java/org/apache/activemq/spring/SpringSslContext.java">org.apache.activemq.spring.SpringSslContext</a></p><h3 id="HowdoIuseSSL-StartingtheClient">Starting the Client</h3><p>When starting the client's VM, specify the following system properties:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<div><div id="highlighter_694393" class="syntaxhighlighter nogutter  java"><table cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java plain">javax.net.ssl.keyStore=/path/to/client.ks</code></div><div class="line number2 index1 alt1"><code class="java plain">javax.net.ssl.keyStorePassword=password</code></div><div class="line number3 index2 alt2"><code class="java plain">javax.net.ssl.trustStore=/path/to/client.ts</code></div></div></td></tr></tbody></table></div></div>
+</div></div>    <div class="aui-message problem shadowed information-macro">
+                            <span class="aui-icon icon-problem">Icon</span>
+                <div class="message-content">
+                            <p>In Linux, do not use absolute path to 
+keystore. By default, keytool uses ~/.keystore, but in some setups 
+passing -Djavax.net.ssl.keyStore=/home/account/.keystore to Java VM does
+ not work. This is not ActiveMQ specific but good to keep in mind 
+anyway.</p>
+                    </div>
+    </div>
+<h3 id="HowdoIuseSSL-Clientcertificates">Client certificates</h3><p>If you want to verify client certificates, you need to take a few extra steps:</p><ol><li><p>Export the client's certificate so it can be shared with broker:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<div><div id="highlighter_598310" class="syntaxhighlighter nogutter  java"><table cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java plain">keytool -export -alias client -keystore client.ks -file client_cert</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li><p>Create a truststore for the broker, and import the client's certificate. This establishes that the broker "trusts" the client:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<div><div id="highlighter_362024" class="syntaxhighlighter nogutter  java"><table cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java plain">keytool -</code><code class="java keyword">import</code> <code class="java plain">-alias client -keystore broker.ts -file client_cert</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li><p>Add</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<div><div id="highlighter_869628" class="syntaxhighlighter nogutter  java"><table cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java plain">-Djavax.net.ssl.trustStore=/path/to/broker.ts</code></div></div></td></tr></tbody></table></div></div>
+</div></div><p>to SSL_OPTS</p></li><li><p>Instruct ActiveMQ to require client authentication by setting the following in activemq.xml:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<div><div id="highlighter_183638" class="syntaxhighlighter nogutter  java"><table cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java plain">&lt;transportConnectors&gt;</code></div><div class="line number2 index1 alt1"><code class="java spaces">&nbsp;&nbsp;</code><code class="java plain">&lt;transportConnector name="ssl" uri="ssl:</code><code class="java comments">//localhost:61617?needClientAuth=true" /&gt;</code></div><div class="line number3 index2 alt2"><code class="java plain">&lt;/transportConnectors&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li></ol><h3 id="HowdoIuseSSL-Usefullinks">Useful links</h3><p>These links might also help</p><ul><li><a shape="rect" class="external-link" href="http://java.sun.com/j2se/1.4.2/docs/guide/security/jsse/JSSERefGuide.html#CreateKeystore" rel="nofollow">Sun's JSSE guide</a></li><li><a shape="rect" class="external-link" href="https://search.thawte.com/support/ssl-digital-certificates/index?page=content&amp;id=SO10061" rel="nofollow">Thawte SSL Troubleshooting Tips</a></li></ul></div>
+        </td>
+        <td valign="top">
+          <div class="navigation">
+            <div class="navigation_top">
+              <div class="navigation_bottom">
+<h3 id="Navigation-Overview"><a shape="rect" href="http://activemq.apache.org/overview.html">Overview</a></h3><ul class="alternate"><li><a shape="rect" href="http://activemq.apache.org/index.html">Index</a></li><li><a shape="rect" href="http://activemq.apache.org/news.html">News</a></li><li><a shape="rect" href="http://activemq.apache.org/new-features.html">New Features</a></li><li><a shape="rect" href="http://activemq.apache.org/getting-started.html">Getting Started</a></li><li><a shape="rect" href="http://activemq.apache.org/faq.html">FAQ</a></li><li><a shape="rect" href="http://activemq.apache.org/articles.html">Articles</a></li><li><a shape="rect" href="http://activemq.apache.org/books.html">Books</a></li><li><a shape="rect" href="http://activemq.apache.org/download.html">Download</a></li><li><a shape="rect" class="external-link" href="http://www.apache.org/licenses/">License</a></li></ul><h3 id="Navigation-Search">Search</h3><div>
+<form enctype="application/x-www-form-urlencoded" method="get" action="http://www.google.com/search" style="font-size: 10px;">
+<input name="ie" value="UTF-8" type="hidden">
+<input name="oe" value="UTF-8" type="hidden">
+  <input maxlength="255" name="q" size="15" value="value" type="text"><br clear="none">
+  <input name="btnG" value="Search" type="submit">
+  <input name="domains" value="activemq.apache.org" type="hidden">
+  <input name="sitesearch" value="activemq.apache.org" type="hidden">
+</form>
+</div>
+<h3 id="Navigation-SubProjects">Sub Projects</h3><ul class="alternate"><li><a shape="rect" class="external-link" href="http://activemq.apache.org/apollo" title="ActiveMQ Apollo">Apollo</a></li><li><a shape="rect" class="external-link" href="http://activemq.apache.org/cms/">CMS</a></li><li><a shape="rect" class="external-link" href="http://activemq.apache.org/nms/" title="NMS is the .Net Messaging API">NMS</a></li></ul><h3 id="Navigation-Community"><a shape="rect" href="http://activemq.apache.org/community.html">Community</a></h3><ul class="alternate"><li><a shape="rect" href="http://activemq.apache.org/support.html">Support</a></li><li><a shape="rect" href="http://activemq.apache.org/contributing.html">Contributing</a></li><li><a shape="rect" href="http://activemq.apache.org/discussion-forums.html">Discussion Forums</a></li><li><a shape="rect" href="http://activemq.apache.org/mailing-lists.html">Mailing Lists</a></li><li><a shape="rect" class="external-link" href="irc://irc.codehaus.org/activemq" rel="nofollow">IRC</a></li><li><a shape="rect" class="external-link" href="http://servlet.uwyn.com/drone/log/hausbot/activemq" rel="nofollow">IRC Log</a></li><li><a shape="rect" href="http://activemq.apache.org/site.html">Site</a></li><li><a shape="rect" class="external-link" href="http://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li><li><a shape="rect" href="http://activemq.apache.org/projects-using-activemq.html">Projects Using ActiveMQ</a></li><li><a shape="rect" href="http://activemq.apache.org/users.html">Users</a></li><li><a shape="rect" href="http://activemq.apache.org/team.html">Team</a></li><li><a shape="rect" href="http://activemq.apache.org/thanks.html">Thanks</a></li></ul><h3 id="Navigation-Features"><a shape="rect" href="http://activemq.apache.org/features.html">Features</a></h3><ul class="alternate"><li><a shape="rect" href="http://activemq.apache.org/advisory-message.html">Advisory Message</a></li><li><a shape="rect" href="http://activemq.apache.org/clustering.html">Clustering</a></li><li><a shape="rect" href="http://activemq.apache.org/cross-language-clients.html">Cross Language Clients</a></li><li><a shape="rect" href="http://activemq.apache.org/enterprise-integration-patterns.html">Enterprise Integration Patterns</a></li><li><a shape="rect" href="http://activemq.apache.org/jmx.html">JMX</a></li><li><a shape="rect" href="http://activemq.apache.org/jms-to-jms-bridge.html">JMS to JMS Bridge</a></li><li><a shape="rect" href="http://activemq.apache.org/masterslave.html">MasterSlave</a></li><li><a shape="rect" href="http://activemq.apache.org/message-groups.html">Message Groups</a></li><li><a shape="rect" href="http://activemq.apache.org/networks-of-brokers.html">Networks of Brokers</a></li><li><a shape="rect" href="http://activemq.apache.org/performance.html">Performance</a></li><li><a shape="rect" href="http://activemq.apache.org/persistence.html">Persistence</a></li><li><a shape="rect" href="http://activemq.apache.org/security.html">Security</a></li><li><a shape="rect" href="http://activemq.apache.org/virtual-destinations.html">Virtual Destinations</a></li><li><a shape="rect" href="http://activemq.apache.org/visualisation.html">Visualisation</a></li><li><a shape="rect" href="http://activemq.apache.org/features.html">More ...</a></li></ul><h3 id="Navigation-Connectivity"><a shape="rect" href="http://activemq.apache.org/connectivity.html">Connectivity</a></h3><ul class="alternate"><li><a shape="rect" href="http://activemq.apache.org/ajax.html">Ajax</a></li><li><a shape="rect" href="http://activemq.apache.org/amqp.html">AMQP</a></li><li><a shape="rect" href="http://activemq.apache.org/axis-and-cxf-support.html">Axis and CXF Support</a></li><li><a shape="rect" href="http://activemq.apache.org/c-integration.html">C Integration</a></li><li><a shape="rect" href="http://activemq.apache.org/activemq-c-clients.html">C++</a></li><li><a shape="rect" class="external-link" href="http://activemq.apache.org/nms/">C# and .Net Integration</a></li><li><a shape="rect" class="external-link" href="http://activemq.apache.org/cms/">CMS</a></li><li><a shape="rect" href="http://activemq.apache.org/j2ee.html">J2EE</a></li><li><a shape="rect" href="http://activemq.apache.org/jboss-integration.html">JBoss Integration</a></li><li><a shape="rect" class="external-link" href="http://docs.codehaus.org/display/JETTY/Integrating+with+ActiveMQ" rel="nofollow">Jetty</a></li><li><a shape="rect" href="http://activemq.apache.org/jndi-support.html">JNDI Support</a></li><li><a shape="rect" class="external-link" href="http://activemq.apache.org/nms/" title="NMS is the .Net Messaging API">NMS</a></li><li><a shape="rect" href="http://activemq.apache.org/rest.html">REST</a></li><li><a shape="rect" href="http://activemq.apache.org/rss-and-atom.html">RSS and Atom</a></li><li><a shape="rect" href="http://activemq.apache.org/spring-support.html">Spring Support</a></li><li><a shape="rect" href="http://activemq.apache.org/stomp.html">Stomp</a></li><li><a shape="rect" href="http://activemq.apache.org/tomcat.html">Tomcat</a></li><li><a shape="rect" href="http://activemq.apache.org/unix-service.html">Unix Service</a></li><li><a shape="rect" href="http://activemq.apache.org/weblogic-integration.html">WebLogic Integration</a></li><li><a shape="rect" href="http://activemq.apache.org/xmpp.html">XMPP</a></li><li><a shape="rect" href="http://activemq.apache.org/connectivity.html">More ...</a></li></ul><h3 id="Navigation-UsingActiveMQ5"><a shape="rect" href="http://activemq.apache.org/using-activemq-5.html">Using ActiveMQ 5</a></h3><ul class="alternate"><li><a shape="rect" href="http://activemq.apache.org/version-5-getting-started.html">Getting Started</a></li><li><a shape="rect" href="http://activemq.apache.org/version-5-initial-configuration.html">Initial Configuration</a></li><li><a shape="rect" href="http://activemq.apache.org/version-5-run-broker.html">Running a Broker</a></li><li><a shape="rect" href="http://activemq.apache.org/how-do-i-embed-a-broker-inside-a-connection.html">Embedded Brokers</a></li><li><a shape="rect" href="http://activemq.apache.org/activemq-command-line-tools-reference.html">Command Line Tools</a></li><li><a shape="rect" href="http://activemq.apache.org/configuring-version-5-transports.html">Configuring Transports</a></li><li><a shape="rect" href="http://activemq.apache.org/version-5-examples.html">Examples</a></li><li><a shape="rect" href="http://activemq.apache.org/version-5-web-samples.html">Web Samples</a></li><li><a shape="rect" href="http://activemq.apache.org/how-can-i-monitor-activemq.html">Monitoring the Broker</a></li><li><a shape="rect" href="http://activemq.apache.org/version-5-xml-configuration.html">Xml Configuration</a></li><li><a shape="rect" href="http://activemq.apache.org/xml-reference.html">Xml Reference</a></li><li><a shape="rect" href="http://activemq.apache.org/using-activemq-5.html">More ...</a></li></ul><h3 id="Navigation-UsingActiveMQ4"><a shape="rect" href="http://activemq.apache.org/using-activemq.html">Using ActiveMQ 4</a></h3><ul class="alternate"><li><a shape="rect" href="http://activemq.apache.org/getting-started.html">Getting Started</a></li><li><a shape="rect" href="http://activemq.apache.org/initial-configuration.html">Initial Configuration</a></li><li><a shape="rect" href="http://activemq.apache.org/run-broker.html">Running a Broker</a></li><li><a shape="rect" href="http://activemq.apache.org/configuring-transports.html">Configuring Transports</a></li><li><a shape="rect" href="http://activemq.apache.org/examples.html">Examples</a></li><li><a shape="rect" href="http://activemq.apache.org/web-samples.html">Web Samples</a></li><li><a shape="rect" href="http://activemq.apache.org/xml-configuration.html">Xml Configuration</a></li><li><a shape="rect" href="http://activemq.apache.org/using-activemq.html">More ...</a></li></ul><h3 id="Navigation-Tools"><a shape="rect" href="http://activemq.apache.org/tools.html">Tools</a></h3><ul class="alternate"><li><a shape="rect" href="http://activemq.apache.org/web-console.html">Web Console</a></li><li><a shape="rect" href="http://activemq.apache.org/activemq-performance-module-users-manual.html">Maven2 Performance Plugin</a></li></ul><h3 id="Navigation-Support"><a shape="rect" href="http://activemq.apache.org/support.html">Support</a></h3><ul class="alternate"><li><a shape="rect" class="external-link" href="http://issues.apache.org/jira/browse/AMQ">Issues</a></li><li><a shape="rect" class="external-link" href="http://issues.apache.org/activemq/browse/AMQ?report=com.atlassian.jira.plugin.system.project:roadmap-panel">Roadmap</a></li><li><a shape="rect" class="external-link" href="http://issues.apache.org/activemq/browse/AMQ?report=com.atlassian.jira.plugin.system.project:changelog-panel">Change log</a></li></ul><h3 id="Navigation-Developers"><a shape="rect" href="http://activemq.apache.org/developers.html">Developers</a></h3><ul class="alternate"><li><a shape="rect" href="http://activemq.apache.org/source.html">Source</a></li><li><a shape="rect" href="http://activemq.apache.org/building.html">Building</a></li><li><a shape="rect" href="http://activemq.apache.org/developer-guide.html">Developer Guide</a></li><li><a shape="rect" href="http://activemq.apache.org/becoming-a-committer.html">Becoming a committer</a></li><li><a shape="rect" href="http://activemq.apache.org/code-overview.html">Code Overview</a></li><li><a shape="rect" href="http://activemq.apache.org/wire-protocol.html">Wire Protocol</a></li><li><a shape="rect" href="http://activemq.apache.org/release-guide.html">Release Guide</a></li></ul><h3 id="Navigation-Tests">Tests</h3><ul class="alternate"><li><a shape="rect" href="http://activemq.apache.org/activemq-performance-module-users-manual.html">Maven2 Performance Plugin</a></li><li><a shape="rect" href="http://activemq.apache.org/benchmark-tests.html">Benchmark Tests</a></li><li><a shape="rect" href="http://activemq.apache.org/jmeter-system-tests.html">JMeter System Tests</a></li><li><a shape="rect" href="http://activemq.apache.org/jmeter-performance-tests.html">JMeter Performance Tests</a></li><li><a shape="rect" href="http://activemq.apache.org/integration-tests.html">Integration Tests</a></li></ul><h3 id="Navigation-ProjectReports">Project Reports</h3><ul class="alternate"><li><a shape="rect" href="http://activemq.apache.org/junit-reports.html">JUnit Reports</a></li><li><a shape="rect" href="http://activemq.apache.org/source-xref.html">Source XRef</a></li><li><a shape="rect" href="http://activemq.apache.org/test-source-xref.html">Test Source XRef</a></li><li><a shape="rect" href="http://activemq.apache.org/xml-reference.html">Xml Reference</a><br clear="none"><br clear="none"><br clear="none"></li></ul>
+              </div>
+            </div>
+          </div>
+        </td>
+        </tr>
+  </tbody>
+        </table>
+        <div class="bottom_red_bar"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="black_box">
+<div class="footer">
+  <div class="footer_l">
+    <div class="footer_r">
+      <div>
+        <a href="http://activemq.apache.org/privacy-policy.html">Privacy Policy</a> -
+        (<a href="https://cwiki.apache.org/confluence/pages/editpage.action?pageId=36030">edit this page</a>)
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="design_attribution">
+© 2004-2011 The Apache Software Foundation.
+<br>          
+Apache ActiveMQ, ActiveMQ, Apache, the Apache feather logo, and the 
+Apache ActiveMQ project logo are trademarks of The Apache Software 
+Foundation.  All other marks mentioned may be trademarks or registered 
+trademarks of their respective owners.
+<br>
+<a href="http://hiramchirino.com/">Graphic Design By Hiram</a>
+</div>
+
+<!-- delay the loading of large javascript files to the end so that they don't interfere with the loading of page content -->
+<span style="display: none">
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script><script src="Apache%20ActiveMQ%20%E2%84%A2%20--%20How%20do%20I%20use%20SSL_files/ga.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-1347593-1");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  </script>
+</span>
+
+
+</body></html>

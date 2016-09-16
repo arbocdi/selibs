@@ -1,0 +1,14 @@
+<bindings id="0">
+   <data class="java.util.concurrent.ConcurrentHashMap" id="1">
+      <entry>
+         <string id="2">net.sf.selibs.utils.inject.InjectorTest$SomeInterface</string>
+         <object class="net.sf.selibs.utils.inject.InjectorTest$SomeClass" id="3">
+            <string id="4">test string</string>
+         </object>
+      </entry>
+      <entry>
+         <string id="5">net.sf.selibs.utils.inject.InjectorTest$SomeClass</string>
+         <object class="net.sf.selibs.utils.inject.InjectorTest$SomeClass" ref="3"/>
+      </entry>
+   </data>
+</bindings>

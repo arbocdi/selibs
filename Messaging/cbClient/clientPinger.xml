@@ -1,0 +1,6 @@
+<pinger>
+   <sleepInterval>10000</sleepInterval>
+   <me class="net.sf.selibs.messaging.sync.SME"/>
+   <destination>echo</destination>
+   <source>pinger</source>
+</pinger>
