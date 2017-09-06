@@ -48,7 +48,7 @@ public class HttpClientWrapper extends Service {
     @Getter
     protected PoolingHttpClientConnectionManager cm;
     @Getter
-    CloseableHttpClient httpClient;
+    protected CloseableHttpClient httpClient;
 
     public HttpClientWrapper() {
         this.sleepInterval = 10000;
@@ -136,6 +136,7 @@ public class HttpClientWrapper extends Service {
         public String handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
             StatusLine statusLine = response.getStatusLine();
             HttpEntity entity = response.getEntity();
+            
             if (statusLine.getStatusCode() >= 300) {
                 throw new HttpResponseException(
                         statusLine.getStatusCode(),
